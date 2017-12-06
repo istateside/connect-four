@@ -4,6 +4,7 @@ import (
   "log"
   "fmt"
   "errors"
+  "strings"
   "encoding/json"
   common "github.com/movableink/go-go-common-go"
   "github.com/movableink/go-go-common-go/pg"
@@ -29,7 +30,7 @@ func (h *Handler) Handle(msg *nsq.Message) error {
     return err
   }
 
-  if commonMsg.ObjectType != "rules_pic" {
+  if commonMsg.ObjectType != "rules_pic" && !strings.Contains(commonMsg.EventType, "click") {
     return nil
   }
 

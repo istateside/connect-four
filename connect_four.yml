@@ -1,0 +1,20 @@
+nsq:
+  lookupServers:
+    - localhost:4161
+
+log:
+  format: text
+  stdout: true
+
+sentry:
+  dsn: ""
+  app: "development"
+
+connectFour:
+  topic: stats.raw
+  channel: 'connect_four'
+
+pgConfig:
+  dbDriver: 'postgres'
+  connection: 'postgres://postgres@localhost/tyson_dev?sslmode=disable'
+  concurrency: 1
