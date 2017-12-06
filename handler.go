@@ -31,13 +31,15 @@ func (h *Handler) Handle(msg *nsq.Message) error {
   }
 
   if commonMsg.ObjectType != "rules_pic" && !strings.Contains(commonMsg.EventType, "click") {
+    log.Println("not a good request")
     return nil
   }
 
   playerID := commonMsg.QueryParams["player_id"]
   gameID := commonMsg.QueryParams["game_id"]
-  column := commonMsg.QueryParams["column_idx"]
+  column := commonMsg.QueryParams["column_id"]
 
+  log.Println(gameID)
   validNumbers := map[string]int{"1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7}
 
   _, ok := validNumbers[column]
