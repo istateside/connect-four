@@ -1,11 +1,15 @@
-create table connect_four_games (
+DROP TABLE IF EXISTS connect_four_games;
+
+CREATE TABLE connect_four_games (
   game_id integer,
   active_player integer,
-  row_1 integer[],
-  row_2 integer[],
-  row_3 integer[],
-  row_4 integer[],
-  row_5 integer[],
-  row_6 integer[],
-  row_7 integer[]
+  col_1 integer[],
+  col_2 integer[],
+  col_3 integer[],
+  col_4 integer[],
+  col_5 integer[],
+  col_6 integer[],
+  col_7 integer[]
 );
+
+ALTER TABLE ONLY connect_four_games ADD CONSTRAINT connect_four_games_pkey PRIMARY KEY (game_id);

@@ -29,6 +29,10 @@ func (h *Handler) Handle(msg *nsq.Message) error {
     return err
   }
 
+  if commonMsg.ObjectType != "rules_pic" {
+    return nil
+  }
+
   playerID := commonMsg.QueryParams["player_id"]
   gameID := commonMsg.QueryParams["game_id"]
   column := commonMsg.QueryParams["column_idx"]
@@ -38,9 +42,32 @@ func (h *Handler) Handle(msg *nsq.Message) error {
   _, ok := validNumbers[column]
 
   if ok && gameID != "" {
-    columnName := fmt.Sprintf("column_%s", column)
-    queryTemplate := "update connect_four_games set %s = array_append(%s, '%s') where game_id = %s"
-    query := []string{fmt.Sprintf(queryTemplate, columnName, columnName, playerID, gameID)}
+    columnName := fmt.Sprintf("col_%s", column)
+    queryTemplate := `
+      INSERT INTO connect_four_games (game_id, %s, active_player)
+      VALUES (%s, ARRAY[%s], %s)
+      ON CONFLICT (game_id)
+      DO UPDATE SET %s = array_append(connect_four_games.%s, %s), active_player = EXCLUDED.active_player
+      WHERE NOT EXISTS (SELECT * FROM connect_four_games WHERE active_player = %s AND game_id = %s);
+    `
+
+    query := []string{
+      fmt.Sprintf(
+        queryTemplate,
+        columnName,
+        gameID,
+        playerID,
+        playerID,
+        columnName,
+        columnName,
+        playerID,
+        playerID,
+        gameID,
+      ),
+    }
+
+    fmt.Printf("%s", query)
+
     h.pg.Write(query)
   } else {
     err := errors.New("who knows")
