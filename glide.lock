@@ -1,0 +1,94 @@
+hash: 8c3de74d1c998dc9229890bb6f0e592250e6acd69f88d77f461f4190c342f5fe
+updated: 2017-12-06T13:39:53.740530593-05:00
+imports:
+- name: github.com/armon/consul-api
+  version: dcfedd50ed5334f96adee43fc88518a4f095e15c
+- name: github.com/bitly/go-nsq
+  version: 8c1ff52dff6fd3ecc19c418649bc643b18e862fc
+- name: github.com/BurntSushi/toml
+  version: a368813c5e648fee92e5f6c30e3944ff9d5e8895
+- name: github.com/cactus/go-statsd-client
+  version: e02c3918a0c632454d279e53dff195772ff45c0d
+  subpackages:
+  - statsd
+- name: github.com/coreos/etcd
+  version: 7e0fc6136eb4c5dc3c8c39ff48eb29e87b7158ab
+  subpackages:
+  - client
+  - pkg/pathutil
+  - pkg/srv
+  - pkg/types
+  - version
+- name: github.com/coreos/go-semver
+  version: 8ab6407b697782a06568d4b7f1db25550ec2e4c6
+  subpackages:
+  - semver
+- name: github.com/evalphobia/logrus_sentry
+  version: e42a087aba29eb4dc9d68207a63d652e560aa6af
+- name: github.com/getsentry/raven-go
+  version: 3966f3ab8333308d76b6cc83a29776a266bbdd92
+- name: github.com/golang/snappy
+  version: 553a641470496b2327abcac10b36396bd98e45c9
+- name: github.com/inconshreveable/mousetrap
+  version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
+- name: github.com/kr/pretty
+  version: cfb55aafdaf3ec08f0db22699ab822c50091b1c4
+- name: github.com/kr/text
+  version: 7cafcd837844e784b526369c9bce262804aebc60
+- name: github.com/lib/pq
+  version: 835d5eb08da4541f26181e6958d7400da769e44b
+  subpackages:
+  - oid
+- name: github.com/mitchellh/mapstructure
+  version: 06020f85339e21b2478f756a78e295255ffa4d6a
+- name: github.com/movableink/go-go-common-go
+  version: 095d696266d9634a593b452fdb31654bde7dc509
+  subpackages:
+  - cli
+  - config
+  - pg
+  - stats
+  - release
+- name: github.com/Sirupsen/logrus
+  version: f3cfb454f4c209e6668c95216c4744b8fddb2356
+- name: github.com/spf13/cast
+  version: acbeb36b902d72a7a4c18e8f3241075e7ab763e4
+- name: github.com/spf13/cobra
+  version: 385fc87e4343efec233811d3d933509e8975d11a
+- name: github.com/spf13/jwalterweatherman
+  version: 12bd96e66386c1960ab0f74ced1362f66f552f7b
+- name: github.com/spf13/pflag
+  version: 4c012f6dcd9546820e378d0bdda4d8fc772cdfea
+- name: github.com/spf13/viper
+  version: 39ab3ca72e35f7628b2b31714eb374b573981077
+- name: github.com/ugorji/go
+  version: bdcc60b419d136a85cdf2e7cbcac34b3f1cd6e57
+  subpackages:
+  - codec
+- name: github.com/VividCortex/godaemon
+  version: 560bd39278f31c0ec39d52beadad9558dcb08ba2
+- name: github.com/xordataexchange/crypt
+  version: b2862e3d0a775f18c7cfe02273500ae307b61218
+  subpackages:
+  - config
+  - backend
+  - backend/consul
+  - backend/etcd
+  - encoding/secconf
+- name: golang.org/x/crypto
+  version: 9419663f5a44be8b34ca85f08abc5fe1be11f8a3
+  subpackages:
+  - openpgp
+  - openpgp/armor
+  - openpgp/errors
+  - openpgp/packet
+  - openpgp/s2k
+  - cast5
+  - openpgp/elgamal
+- name: golang.org/x/sys
+  version: b90f89a1e7a9c1f6b918820b3daa7f08488c8594
+  subpackages:
+  - unix
+- name: gopkg.in/yaml.v2
+  version: 287cf08546ab5e7e37d55a84f7ed3fd1db036de5
+testImports: []

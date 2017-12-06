@@ -13,6 +13,6 @@ func main() {
       Config.ConnectFour.Channel,
       NewHandler(),
       Config,
-    )
-  }).Run(1)
+    ).Run(1)
+  })
 }
