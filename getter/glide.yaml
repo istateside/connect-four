@@ -1,0 +1,4 @@
+package: github.com/movableink/connect-four-server
+import:
+- package: github.com/gorilla/mux
+- package: github.com/lib/pq
